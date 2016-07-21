@@ -4,9 +4,10 @@
 	<meta charset="UTF-8">
 	<title>Laravel e AngularJS</title>
 
-	<!-- CSS -->
+	{{-- CSS --}}
 	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	{{-- FONTAWESOME  --}}
+	<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
 	<style>
 		body 		{ padding-top:30px; }
 		form 		{ padding-bottom:20px; }
@@ -15,8 +16,8 @@
 
 	<!-- JS -->
 	<script src="libs/jquery/jquery.min.js"></script>
-	<!-- ANGULAR -->
-	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
+	<!-- ANGULAR 1.5.7 -->
+	<script src="libs/angularjs/angular.min.js"></script>
 
 	<!-- todos os recursos do angular seram carregados a partir da pasta pública / -->
 	<script src="js/controllers/mainCtrl.js"></script> <!-- carrega a nossa controller -->
@@ -49,7 +50,9 @@
 		
 		<!-- ENVIAR COMENTÁRIO -->
 		<div class="form-group text-right">	
-			<button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+			<button type="submit" class="btn btn-success btn-lg">
+				<i class="fa fa-commenting-o" aria-hidden="true"></i> Enviar
+			</button>
 		</div>
 	</form>
 
@@ -67,7 +70,9 @@
 	<div class="comentario" ng-hide="loading" ng-repeat="comentario in comentarios">
 		<h3>Comentário #{[[{ comentario.id }]]} <small>por {[[{ comentario.autor }]]}</small></h3>
 		<p>{[[{ comentario.comentario }]]}</p>
-		<p><a href="#" ng-click="deleteComentario(comentario.id)" class="text-muted">Deletar</a></p>
+		<button type="button" class="btn btn-danger" ng-click="deleteComentario(comentario.id)" title="Deletar comentário">
+			<i class="fa fa-trash-o" aria-hidden="true"></i> Deletar
+		</button>
 	</div>
 
 </div>
