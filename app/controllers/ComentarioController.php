@@ -9,7 +9,7 @@ class ComentarioController extends \BaseController {
 	 */
 	public function index()
 	{
-		return Response::json(Comentario::get());
+		return Response::json(Comentario::orderBy('id', 'desc')->get());
 	}
 
 	/**
