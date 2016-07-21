@@ -50,7 +50,7 @@
 		
 		<!-- ENVIAR COMENTÁRIO -->
 		<div class="form-group text-right">	
-			<button type="submit" class="btn btn-success btn-lg">
+			<button type="submit" class="btn btn-success btn-lg" title="Enviar comentário">
 				<i class="fa fa-commenting-o" aria-hidden="true"></i> Enviar
 			</button>
 		</div>
@@ -68,7 +68,7 @@
 	<!-- OS COMENTÁRIOS -->
 	<!-- ocultar esses comentarios se a variável é TRUE -->
 	<div class="comentario" ng-hide="loading" ng-repeat="comentario in comentarios">
-		<h3>Comentário #{[[{ comentario.id }]]} <small>por {[[{ comentario.autor }]]}</small></h3>
+		<h3>Comentário #{[[{ comentario.id }]]} <small>por <i class="fa fa-user" aria-hidden="true"></i> {[[{ comentario.autor }]]}</small></h3>
 		<p>{[[{ comentario.comentario }]]}</p>
 		<button type="button" class="btn btn-danger" ng-click="deleteComentario(comentario.id)" title="Deletar comentário">
 			<i class="fa fa-trash-o" aria-hidden="true"></i> Deletar
